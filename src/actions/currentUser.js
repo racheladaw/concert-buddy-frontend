@@ -1,7 +1,7 @@
 export const setCurrentUser = user => {
   return {
     type: "SET_CURRENT_USER",
-    payload: user
+    user
   }
 }
 
@@ -18,6 +18,16 @@ export const login = credentials => {
       },
       body: JSON.stringify(credentials)
     }
+
     return fetch("http://localhost:3001/api/v1/login", configurationObject)
+      .then(r => r.json())
+      .then(user => {
+        if (user.error) {
+          alert(user.error)
+        } else {
+          dispatch(setCurrentUser(user))
+        }
+      })
+      .catch(error => console.log(error))
   }
 }
