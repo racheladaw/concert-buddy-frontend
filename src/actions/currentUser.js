@@ -12,6 +12,7 @@ export const login = credentials => {
   console.log(credentials)
   return dispatch => {
     const configurationObject = {
+      credentials: "include",
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -35,6 +36,8 @@ export const login = credentials => {
 export const getCurrentUser = () => {
   return dispatch => {
     const configurationObject = {
+      // added to use sessions and cookies
+      credentials: "include",
       method: "GET",
       headers: {
         "Content-Type": "application/json"
