@@ -5,11 +5,16 @@ export const setCurrentUser = user => {
   }
 }
 
+export const removeCurrentUser = () => {
+  return {
+    type: "REMOVE_CURRENT_USER"
+  }
+}
+
 
 
 //async action creators
 export const login = credentials => {
-  console.log(credentials)
   return dispatch => {
     const configurationObject = {
       credentials: "include",
@@ -36,7 +41,7 @@ export const login = credentials => {
 export const getCurrentUser = () => {
   return dispatch => {
     const configurationObject = {
-      // added to use sessions and cookies
+      // sends cookies back
       credentials: "include",
       method: "GET",
       headers: {
@@ -54,5 +59,17 @@ export const getCurrentUser = () => {
         }
       })
       .catch(error => console.log(error))
+  }
+}
+
+export const logout = () => {
+  return dispatch => {
+    dispatch(removeCurrentUser())
+    const configurationObject = {
+      credentials: "include",
+      method: "DELETE"
+    }
+
+    return fetch("http://localhost:3001/api/v1/logout", configurationObject)
   }
 }
