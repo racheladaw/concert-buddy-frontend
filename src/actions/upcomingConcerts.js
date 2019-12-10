@@ -23,7 +23,6 @@ export const getUpcomingConcerts = () => {
         if (concerts.error) {
           alert(concerts.error)
         } else {
-          console.log(concerts)
           dispatch(setConcerts(concerts.data))
         }
       })
