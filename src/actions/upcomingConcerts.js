@@ -19,12 +19,12 @@ export const getUpcomingConcerts = () => {
 
     return fetch("http://localhost:3001/api/v1/get_upcoming_concerts", configurationObject)
       .then(r => r.json())
-      .then(data => {
-        if (data.error) {
-          alert(data.error)
+      .then(concerts => {
+        if (concerts.error) {
+          alert(concerts.error)
         } else {
-          console.log(data)
-          // dispatch(setConcerts(data))
+          console.log(concerts)
+          dispatch(setConcerts(concerts.data))
         }
       })
       .catch(error => console.log(error))
