@@ -38,6 +38,33 @@ export const login = credentials => {
   }
 }
 
+export const signUp = credentials => {
+  return dispatch => {
+    const signupInfo = {
+      user: credentials
+    }
+    const configurationObject = {
+      credentials: "include",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(signupInfo)
+    }
+
+    return fetch("http://localhost:3001/api/v1/signup", configurationObject)
+      .then(r => r.json())
+      .then(user => {
+        if (user.error) {
+          alert(user.error)
+        } else {
+          dispatch(setCurrentUser(user.data))
+        }
+      })
+      .catch(error => console.log(error))
+  }
+}
+
 export const getCurrentUser = () => {
   return dispatch => {
     const configurationObject = {
