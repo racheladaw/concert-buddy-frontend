@@ -2,7 +2,9 @@ import React from 'react';
 import UpcomingConcerts from './UpcomingConcerts';
 import Logo from './Logo';
 import Login from './Login'
+import SignUp from './SignUp';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 
 class MainContainer extends React.Component {
   render() {
@@ -13,7 +15,11 @@ class MainContainer extends React.Component {
         ) : (
           <div className="LoggedOutScreen">
             <Logo />
-            <Login />
+            <button>Login</button>
+            <p>OR</p>
+            <button>Sign Up</button>
+            <Route exact path='/login' component={Login}/>
+            <Route exact path='/signup' component={SignUp} />
           </div>
        )}
       </div>
