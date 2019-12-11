@@ -13,9 +13,15 @@ class App extends React.Component {
 
 
   render() {
+    let navbar
+
+    if (this.props.currentUser) {
+      navbar = <NavBar />;
+    }
+
     return (
       <div className="App">
-        <NavBar />
+        {navbar}
         <MainContainer />
       </div>
     )
