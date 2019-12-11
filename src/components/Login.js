@@ -25,10 +25,11 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="Login">
         <h3>Login to Concert Buddy</h3>
         <form onSubmit={this.handleSubmit}>
           <input
+            className="text-input"
             onChange={this.handleChange}
             name="username"
             type="text"
@@ -36,6 +37,7 @@ class Login extends React.Component {
             value={this.state.username}
           /><br/>
           <input
+            className="text-input"
             onChange={this.handleChange}
             name="password"
             type="password"
@@ -43,6 +45,7 @@ class Login extends React.Component {
             value={this.state.password}
           /><br/>
           <input
+            className="submit-input"
             type="submit"
             value="Login"
           />
