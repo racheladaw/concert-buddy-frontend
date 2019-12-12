@@ -15,8 +15,8 @@ class App extends React.Component {
   render() {
     let navbar
 
-    if (this.props.currentUser) {
-      navbar = <NavBar />;
+    if (this.props.loggedIn) {
+      navbar = <NavBar />
     }
 
     return (
@@ -30,7 +30,7 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.currentUser
+    loggedIn: !!state.currentUser
   }
 }
 
