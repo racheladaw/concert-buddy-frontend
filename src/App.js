@@ -5,7 +5,6 @@ import { getCurrentUser } from './actions/currentUser';
 import NavBar from './components/NavBar';
 import MainContainer from './components/MainContainer';
 import Welcome from './components/Welcome';
-import { Route } from 'react-router-dom';
 
 class App extends React.Component {
 
