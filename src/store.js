@@ -3,12 +3,14 @@ import thunk from 'redux-thunk';
 import usersReducer from './reducers/users.js';
 import currentUserReducer from './reducers/currentUser.js';
 import upcomingConcertsReducer from './reducers/upcomingConcerts.js';
+import savedConcertsReducer from './reducers/savedConcerts.js';
 
 
 const reducer = combineReducers({
   users: usersReducer,
   currentUser: currentUserReducer,
-  upcomingConcerts: upcomingConcertsReducer
+  upcomingConcerts: upcomingConcertsReducer,
+  savedConcerts: savedConcertsReducer
 })
 // newer version of how middleware is put together
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
