@@ -14,7 +14,7 @@ export const removeCurrentUser = () => {
 
 
 //async action creators
-export const login = credentials => {
+export const login = (credentials, routeHistory) => {
   return dispatch => {
     const configurationObject = {
       credentials: "include",
@@ -32,6 +32,7 @@ export const login = credentials => {
           alert(user.error)
         } else {
           dispatch(setCurrentUser(user.data))
+          routeHistory.push('/')
         }
       })
       .catch(error => console.log(error))
