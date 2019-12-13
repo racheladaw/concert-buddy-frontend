@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser';
 import NavBar from './components/NavBar';
 import MainContainer from './components/MainContainer';
+import Welcome from './components/Welcome';
+import { Route } from 'react-router-dom';
 
 class App extends React.Component {
 
@@ -14,15 +16,21 @@ class App extends React.Component {
 
   render() {
     let navbar
+    let main
+    let welcome
 
     if (this.props.loggedIn) {
       navbar = <NavBar />
+      main = <MainContainer />
+    } else {
+      welcome = <Welcome />
     }
 
     return (
       <div className="App">
         {navbar}
-        <MainContainer />
+        {main}
+        {welcome}
       </div>
     )
   }
