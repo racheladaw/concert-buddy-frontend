@@ -72,3 +72,12 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.logout-button {
+  background-color: #745280;
+  color: white;
+  border: 1px solid black;
+  padding: 10px 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
