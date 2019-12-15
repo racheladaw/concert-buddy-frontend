@@ -18,7 +18,7 @@ class UpcomingConcerts extends React.Component {
   render() {
     return (
       <div className="UpcomingConcerts">
-        <h1>UpcomingConcerts</h1>
+        <h1>Upcoming Concerts in {this.props.currentUserCity}</h1>
         {this.renderConcertCard()}
       </div>
     )
@@ -27,7 +27,8 @@ class UpcomingConcerts extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    concerts: state.upcomingConcerts
+    concerts: state.upcomingConcerts,
+    currentUserCity: state.currentUser.attributes.location_json.city
   }
 }
 
