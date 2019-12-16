@@ -74,15 +74,51 @@
 }
 
 .logout-button {
-  background-color: #745280;
-  color: white;
-  border: 1px solid black;
-  padding: 10px 20px;
-  margin: 4px 2px;
+  background: none;
+  border: none;
+  padding: 14px 16px;
   cursor: pointer;
+  text-align: center;
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
 }
 
 .welcome-link {
   display: inline-block;
   padding: 3px;
+}
+
+.NavBar {
+  list-style-type: none;
+  height: 45px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #745280;
+}
+
+.NavBar li {
+  float: left;
+}
+
+.NavBar a {
+  text-align: center;
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #46324e;
+}
+
+.logout-button:hover:not(.active) {
+  background-color: #46324e;
+}
+
+.active {
+  background-color: 	#435770;
 }
