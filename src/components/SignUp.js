@@ -43,7 +43,7 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className="SignUp">
-        <h3>Sign Up for Concert Buddy</h3>
+        <h3>Sign Up</h3>
         <form onSubmit={this.handleSubmit}>
           <input
             className="text-input"
@@ -74,7 +74,7 @@ class SignUp extends React.Component {
             onChange={this.handleChange}
             name="country"
             type="text"
-            placeholder="Country"
+            placeholder="Country (Concert data only available for the US and Canada at this time)"
             value={this.state.location.country}
           /><br/>
           <input
