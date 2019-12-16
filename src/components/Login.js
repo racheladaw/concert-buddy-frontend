@@ -26,7 +26,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className="Login">
-        <h3>Login to Concert Buddy</h3>
+        <h3>Login</h3>
         <form onSubmit={this.handleSubmit}>
           <input
             className="text-input"
