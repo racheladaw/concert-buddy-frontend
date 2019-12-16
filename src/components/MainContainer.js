@@ -1,13 +1,16 @@
 import React from 'react';
 import UpcomingConcerts from './UpcomingConcerts';
 import SavedConcerts from './SavedConcerts';
+import { Switch, Route, Link } from 'react-router-dom';
 
 
 const MainContainer = () => {
     return (
       <div className="MainContainer">
-          <UpcomingConcerts />
-          <SavedConcerts />
+        <Switch>
+          <Route exact path='/upcoming_concerts' component={UpcomingConcerts}/>
+          <Route exact path='/saved_concerts' component={SavedConcerts} />
+        </Switch>
       </div>
     )
 }
