@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Logout from './Logout';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = (props) => {
   return (
-    <div className="NavBar">
-      <Logout />
-      <Link to='/upcoming_concerts' className="concerts-link">Upcoming Concerts</Link><br/>
-      <Link to='/saved_concerts' className="concerts-link">Saved Concerts</Link>
-    </div>
+    <ul className="NavBar">
+      <li><NavLink to='/upcoming_concerts' activeClassName="active" className="concerts-link">Upcoming Concerts</NavLink><br/></li>
+      <li><NavLink to='/saved_concerts' activeClassName="active" className="concerts-link">Saved Concerts</NavLink></li>
+      <li><Logout /></li>
+    </ul>
   )
 }
 
