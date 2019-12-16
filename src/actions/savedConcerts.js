@@ -1,7 +1,14 @@
-export const addConcert = saved_concert => {
+export const addConcert = data => {
   return {
     type: "ADD_SAVED_CONCERT",
-    concert_id: saved_concert.concert_id
+    concert: data
+  }
+}
+
+export const setSavedConcerts = data => {
+  return {
+    type: "SET_SAVED_CONCERTS",
+    concerts: data
   }
 }
 
@@ -31,10 +38,28 @@ export const saveConcert = (concert_id, user_id) => {
         } else {
           console.log(saved_concert)
           alert("Concert Saved")
-          // need to add to saved concerts redux store
-          dispatch(addConcert(saved_concert))
+          dispatch(addConcert(saved_concert.data))
           // routeHistory.push('/')
         }
+      })
+      .catch(error => console.log(error))
+  }
+}
+
+export const getSavedConcerts = () => {
+  return dispatch => {
+    const configurationObject = {
+      credentials: "include",
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }
+
+    return fetch("http://localhost:3001/api/v1/saved_concerts", configurationObject)
+      .then(r => r.json())
+      .then(saved_concerts => {
+        dispatch(setSavedConcerts(saved_concerts.data))
       })
       .catch(error => console.log(error))
   }
