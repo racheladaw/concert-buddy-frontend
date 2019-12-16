@@ -103,6 +103,14 @@
   float: left;
 }
 
+#welcome-user {
+  float: right;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  color: black;
+}
+
 .NavBar a {
   text-align: center;
   display: block;
