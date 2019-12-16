@@ -1,3 +1,5 @@
+import { getConcertsFromSongkick } from './upcomingConcerts.js';
+
 export const setCurrentUser = user => {
   return {
     type: "SET_CURRENT_USER",
@@ -32,6 +34,7 @@ export const login = (credentials, routeHistory) => {
           alert(user.error)
         } else {
           dispatch(setCurrentUser(user.data))
+          dispatch(getConcertsFromSongkick())
           routeHistory.push('/')
         }
       })
@@ -60,6 +63,7 @@ export const signUp = credentials => {
           alert(user.error)
         } else {
           dispatch(setCurrentUser(user.data))
+          dispatch(getConcertsFromSongkick())
         }
       })
       .catch(error => console.log(error))
