@@ -3,8 +3,10 @@ export default (state = [] , action) => {
     case "ADD_SAVED_CONCERT":
       return [
         ...state,
-        {concert_id: action.concert_id}
+        action.concert
       ]
+      case "SET_SAVED_CONCERTS":
+        return action.concerts
     default:
       return state
   }
