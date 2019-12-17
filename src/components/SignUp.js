@@ -74,7 +74,7 @@ class SignUp extends React.Component {
             onChange={this.handleChange}
             name="country"
             type="text"
-            placeholder="Country (Concert data only available for the US and Canada at this time)"
+            placeholder="Country (US or Canada only)"
             value={this.state.location.country}
           /><br/>
           <input
@@ -96,7 +96,7 @@ class SignUp extends React.Component {
           <input
             className="submit-input"
             type="submit"
-            value="Login"
+            value="Sign Up"
           />
         </form>
       </div>
