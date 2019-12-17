@@ -8,12 +8,14 @@ const Welcome = () => {
   return (
     <div className="Welcome">
       <h4>Welcome to Concert Buddy</h4>
-      <Link to='/login' className="welcome-link">Login</Link><br/>
-      <Link to='/signup' className="welcome-link">Sign Up</Link>
-      <Switch>
-        <Route exact path='/login' component={Login}/>
-        <Route exact path='/signup' component={SignUp} />
-      </Switch>
+      <div className="welcome-text">
+        <Link to='/login' className="welcome-link">Login</Link>
+        <Link to='/signup' className="welcome-link">Sign Up</Link>
+        <Switch>
+          <Route exact path='/login' component={Login}/>
+          <Route exact path='/signup' component={SignUp} />
+        </Switch>
+      </div>
       <Logo />
     </div>
   )
