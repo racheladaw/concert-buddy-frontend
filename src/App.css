@@ -4,32 +4,13 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
-
 .MainContainer {
   width: 100%;
   height: 100%;
 }
 
 
-.LoggedOutScreen {
+/* .LoggedOutScreen {
   background-color: #c4b5c9;
   width: 100%;
   height: 100%;
@@ -37,40 +18,95 @@
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
+} */
+
+.Welcome {
+  align-items: center;
+  display: grid;
+  grid:
+  'header header'
+  'menu logo';
+}
+
+.Welcome h4 {
+  text-align: center;
+  margin: 20px 10px;
+  font-size: 3em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  grid-area: header;
+}
+
+.welcome-link {
+  display: inline-block;
+  border-radius: 8px;
+  color: white;
+  width: 70px;
+  background-color: #3a608c;
+  padding: 5px 16px;
+  margin: 0px 4px 5px 4px;
+  border: 1px solid black;
+  text-decoration: none;
+}
+
+.welcome-link:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.welcome-text {
+  grid-area: menu;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .logo {
-  height: 100%;
-  width: 100%;
-  flex: 2 1 0;
+  grid-area: logo;
 }
 
 .logo img {
   width: 100%;
   height: 100%;
+  margin: 0;
 }
 
 .Login {
-  flex: 1 1 0;
   font-size: 1em;
+  padding: 2px 20px;
 }
 
 .text-input {
   box-sizing: border-box;
   border: 1px solid;
   border-radius: 4px;
-  width: 50%;
-  padding: 8px;
+  width: 100%;
+  padding: 15px 10px;
   margin: 5px;
 }
 
 .submit-input {
-  background-color: #745280;
+  background-color: #3a608c;
   color: white;
   border: 1px solid black;
-  padding: 10px 20px;
-  margin: 4px 2px;
+  padding: 14px 20px;
+  margin: 10px 10px;
   cursor: pointer;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.submit-input:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.Login h3 {
+  font-size: 1.5em;
+  font-weight: 150;
+}
+
+.SignUp h3 {
+  font-size: 1.5em;
+  font-weight: 150;
 }
 
 .logout-button {
@@ -83,11 +119,6 @@
   color: white;
   text-decoration: none;
   font-size: 1em;
-}
-
-.welcome-link {
-  display: inline-block;
-  padding: 3px;
 }
 
 .NavBar {
