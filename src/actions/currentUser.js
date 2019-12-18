@@ -42,7 +42,7 @@ export const login = (credentials, routeHistory) => {
   }
 }
 
-export const signUp = credentials => {
+export const signUp = (credentials, routeHistory) => {
   return dispatch => {
     const signupInfo = {
       user: credentials
@@ -64,6 +64,7 @@ export const signUp = credentials => {
         } else {
           dispatch(setCurrentUser(user.data))
           dispatch(getConcertsFromSongkick())
+          routeHistory.push('/')
         }
       })
       .catch(error => console.log(error))
