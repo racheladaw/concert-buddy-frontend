@@ -7,8 +7,8 @@ import { Switch, Route, Link } from 'react-router-dom';
 const Welcome = () => {
   return (
     <div className="Welcome">
-      <h4>Welcome to Concert Buddy</h4>
       <div className="welcome-text">
+        <h4>Concert Buddy</h4>
         <Link to='/login' className="welcome-link">Login</Link>
         <Link to='/signup' className="welcome-link">Sign Up</Link>
         <Switch>
