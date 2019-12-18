@@ -3,7 +3,13 @@ import { connect } from 'react-redux';
 import { saveConcert } from '../actions/savedConcerts.js';
 
 // params are destructured as they are passed as argument
-const ConcertCard = ({ concert, saveConcert, currentUserId }) => {
+const ConcertCard = ({ concert, saveConcert, currentUserId, saved_concert }) => {
+
+  const renderButton = () => {
+    if (!saved_concert) {
+      return <button onClick={() => saveConcert(concert.id, currentUserId)}>Save This Concert</button>
+    }
+  }
 
   return (
     <div className="ConcertCard">
@@ -11,7 +17,7 @@ const ConcertCard = ({ concert, saveConcert, currentUserId }) => {
       <p>{concert.attributes.date}</p>
       <p>${concert.attributes.price_range}</p>
       <p>{concert.attributes.location_json.city}, {concert.attributes.location_json.state}</p>
-      <button onClick={() => saveConcert(concert.id, currentUserId)}>Save This Concert</button>
+      {renderButton()}
     </div>
   )
 }
