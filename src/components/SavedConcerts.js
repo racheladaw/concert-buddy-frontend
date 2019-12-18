@@ -11,7 +11,7 @@ class SavedConcerts extends React.Component {
 
   renderConcertCard() {
     return this.props.concerts.map(concert_data => {
-      return <ConcertCard key={concert_data.id} concert={concert_data} />
+      return <ConcertCard key={concert_data.id} concert={concert_data} saved_concert={true} />
     })
   }
 
