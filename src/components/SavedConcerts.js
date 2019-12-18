@@ -19,7 +19,9 @@ class SavedConcerts extends React.Component {
     return (
       <div className="SavedConcerts">
         <h1>Your Saved Concerts</h1>
-        {this.renderConcertCard()}
+        <div className="card-container">
+          {this.renderConcertCard()}
+        </div>
       </div>
     )
   }

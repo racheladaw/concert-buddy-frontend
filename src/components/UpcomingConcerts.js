@@ -19,7 +19,9 @@ class UpcomingConcerts extends React.Component {
     return (
       <div className="UpcomingConcerts">
         <h1>Upcoming Concerts in {this.props.currentUserCity}</h1>
-        {this.renderConcertCard()}
+        <div className="card-container">
+          {this.renderConcertCard()}
+        </div>
       </div>
     )
   }
