@@ -9,8 +9,8 @@ This app utilizes React and Redux on the front-end and a Rails API back-end with
 To get started using this app do the following:
 
 - Clone the repository
- - ```git clone https://github.com/racheladaw/concert-buddy-app-backend.git```
-- Navigate to the top of the 'quick-recipe-api' directory
+ - ```git clone https://github.com/racheladaw/concert-buddy-frontend.git```
+- Navigate to the top of the concert buddy client directory
  - ```cd concert-buddy-client```
 - Install required dependencies
  - ```npm install```
