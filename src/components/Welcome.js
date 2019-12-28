@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from './Logo';
 import Login from './Login'
 import SignUp from './SignUp'
-import { Switch, Route, Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 const Welcome = () => {
   return (
@@ -11,10 +11,8 @@ const Welcome = () => {
         <h4>Concert Buddy</h4>
         <Link to='/login' className="welcome-link">Login</Link>
         <Link to='/signup' className="welcome-link">Sign Up</Link>
-        <Switch>
-          <Route exact path='/login' component={Login}/>
-          <Route exact path='/signup' component={SignUp} />
-        </Switch>
+        <Route exact path='/login' component={Login}/>
+        <Route exact path='/signup' component={SignUp} />
       </div>
       <Logo />
     </div>
