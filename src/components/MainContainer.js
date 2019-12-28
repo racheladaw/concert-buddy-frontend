@@ -1,17 +1,17 @@
 import React from 'react';
 import UpcomingConcerts from './UpcomingConcerts';
 import SavedConcerts from './SavedConcerts';
-import { Switch, Route } from 'react-router-dom';
+import NavBar from './NavBar';
+import { Route } from 'react-router-dom';
 
 
 const MainContainer = () => {
     return (
       <div className="MainContainer">
-        <Switch>
-          <Route exact path="/" component={UpcomingConcerts} />
-          <Route exact path='/upcoming_concerts' component={UpcomingConcerts}/>
-          <Route exact path='/saved_concerts' component={SavedConcerts} />
-        </Switch>
+        <NavBar />
+        <Route exact path="/home" component={UpcomingConcerts} />
+        <Route exact path='/home/upcoming_concerts' component={UpcomingConcerts}/>
+        <Route exact path='/home/saved_concerts' component={SavedConcerts} />
       </div>
     )
 }
