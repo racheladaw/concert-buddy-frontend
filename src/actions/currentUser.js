@@ -35,7 +35,7 @@ export const login = (credentials, routeHistory) => {
         } else {
           dispatch(setCurrentUser(user.data))
           dispatch(getConcertsFromSongkick())
-          routeHistory.push('/')
+          routeHistory.push('/home')
         }
       })
       .catch(error => console.log(error))
@@ -64,7 +64,7 @@ export const signUp = (credentials, routeHistory) => {
         } else {
           dispatch(setCurrentUser(user.data))
           dispatch(getConcertsFromSongkick())
-          routeHistory.push('/')
+          routeHistory.push('/home')
         }
       })
       .catch(error => console.log(error))
@@ -95,9 +95,10 @@ export const getCurrentUser = () => {
   }
 }
 
-export const logout = () => {
+export const logout = (routeHistory) => {
   return dispatch => {
     dispatch(removeCurrentUser())
+    routeHistory.push('/')
     const configurationObject = {
       credentials: "include",
       method: "DELETE"
