@@ -34,6 +34,7 @@ class ConcertCard extends React.Component {
       <p>${this.props.concert.attributes.price_range}</p>
       <p>{this.props.concert.attributes.location_json.city}, {this.props.concert.attributes.location_json.state}</p>
       <button onClick={this.handleUpvote}>Upvote this: {this.state.upvote}</button>
+      <button>See who else saved this show</button>
       {this.renderButton()}
     </div>
     )
