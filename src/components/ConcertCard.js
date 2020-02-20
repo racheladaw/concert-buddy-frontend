@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { saveConcert } from '../actions/savedConcerts.js';
 
@@ -27,15 +28,22 @@ class ConcertCard extends React.Component {
   }
 
   render() {
-  return (
-    <div className="ConcertCard">
-      <h4>{this.props.concert.attributes.artist_name}</h4>
-      <p>{this.props.concert.attributes.date}</p>
-      <p>${this.props.concert.attributes.price_range}</p>
-      <p>{this.props.concert.attributes.location_json.city}, {this.props.concert.attributes.location_json.state}</p>
-      <button onClick={this.handleUpvote}>Upvote this: {this.state.upvote}</button>
-      {this.renderButton()}
-    </div>
+    return (
+        <div className="ConcertCard">
+          <h4>{this.props.concert.attributes.artist_name}</h4>
+          <p>{this.props.concert.attributes.date}</p>
+          <p>${this.props.concert.attributes.price_range}</p>
+          <p>{this.props.concert.attributes.location_json.city}, {this.props.concert.attributes.location_json.state}</p>
+          <button onClick={this.handleUpvote}>Upvote this: {this.state.upvote}</button>
+          <Link
+            to={{
+                pathname: `/home/concert/${this.props.concert.id}/stats`,
+                state: {
+                  concertData: this.props.concert.attributes
+                }
+              }}>More Information</Link>
+          {this.renderButton()}
+        </div>
     )
   }
 }
