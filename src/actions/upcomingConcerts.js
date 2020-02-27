@@ -17,7 +17,7 @@ export const getUpcomingConcerts = () => {
       }
     }
 
-    return fetch("http://localhost:3001/api/v1/get_upcoming_concerts", configurationObject)
+    return fetch("https://concert-buddy.herokuapp.com/api/v1/get_upcoming_concerts", configurationObject)
       .then(r => r.json())
       .then(concerts => {
         dispatch(setConcerts(concerts.data))
@@ -37,7 +37,7 @@ export const getConcertsFromSongkick = () => {
       }
     }
 
-    return fetch("http://localhost:3001/api/v1/get_concert_data", configurationObject)
+    return fetch("https://concert-buddy.herokuapp.com/api/v1/get_concert_data", configurationObject)
       .then(r => r.json())
       .then(concerts => {
         if (concerts.error) {

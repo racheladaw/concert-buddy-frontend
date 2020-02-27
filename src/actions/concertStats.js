@@ -16,7 +16,7 @@ export const getUsersOfConcert = (concertId) => {
       }
     }
     console.log("hit getUsersOfConcert")
-    return fetch(`http://localhost:3001/api/v1/concert/${concertId}/users`, configurationObject)
+    return fetch(`https://concert-buddy.herokuapp.com/api/v1/concert/${concertId}/users`, configurationObject)
       .then(r => r.json())
       .then(users => {
         if (users.error) {

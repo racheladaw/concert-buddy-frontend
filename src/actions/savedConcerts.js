@@ -30,7 +30,7 @@ export const saveConcert = (concert_id, user_id) => {
       })
     }
 
-    return fetch("http://localhost:3001/api/v1/save_concert", configurationObject)
+    return fetch("https://concert-buddy.herokuapp.com/api/v1/save_concert", configurationObject)
       .then(r => r.json())
       .then(saved_concert => {
         if (saved_concert.error) {
@@ -56,7 +56,7 @@ export const getSavedConcerts = () => {
       }
     }
 
-    return fetch("http://localhost:3001/api/v1/saved_concerts", configurationObject)
+    return fetch("https://concert-buddy.herokuapp.com/api/v1/saved_concerts", configurationObject)
       .then(r => r.json())
       .then(saved_concerts => {
         dispatch(setSavedConcerts(saved_concerts.data))
