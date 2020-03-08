@@ -1,3 +1,5 @@
+import { baseUrl } from '../config/baseUrl';
+
 export const setConcerts = data => {
   return {
     type: "SET_UPCOMING_CONCERTS",
@@ -17,7 +19,7 @@ export const getUpcomingConcerts = () => {
       }
     }
 
-    return fetch("https://concert-buddy.herokuapp.com/api/v1/get_upcoming_concerts", configurationObject)
+    return fetch(`${baseUrl}/api/v1/get_upcoming_concerts`, configurationObject)
       .then(r => r.json())
       .then(concerts => {
         dispatch(setConcerts(concerts.data))
@@ -37,7 +39,7 @@ export const getConcertsFromSongkick = () => {
       }
     }
 
-    return fetch("https://concert-buddy.herokuapp.com/api/v1/get_concert_data", configurationObject)
+    return fetch(`${baseUrl}/api/v1/get_concert_data`, configurationObject)
       .then(r => r.json())
       .then(concerts => {
         if (concerts.error) {

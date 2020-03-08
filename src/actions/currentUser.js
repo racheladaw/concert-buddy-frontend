@@ -1,4 +1,5 @@
 import { getConcertsFromSongkick } from './upcomingConcerts.js';
+import { baseUrl } from '../config/baseUrl';
 
 export const setCurrentUser = user => {
   return {
@@ -27,7 +28,7 @@ export const login = (credentials, routeHistory) => {
       body: JSON.stringify(credentials)
     }
 
-    return fetch("https://concert-buddy.herokuapp.com/api/v1/login", configurationObject)
+    return fetch(`${baseUrl}/api/v1/login`, configurationObject)
       .then(r => r.json())
       .then(user => {
         if (user.error) {
@@ -56,7 +57,7 @@ export const signUp = (credentials, routeHistory) => {
       body: JSON.stringify(signupInfo)
     }
 
-    return fetch("https://concert-buddy.herokuapp.com/api/v1/signup", configurationObject)
+    return fetch(`${baseUrl}/api/v1/signup`, configurationObject)
       .then(r => r.json())
       .then(user => {
         if (user.error) {
@@ -82,7 +83,7 @@ export const getCurrentUser = () => {
       }
     }
 
-    return fetch("https://concert-buddy.herokuapp.com/api/v1/get_current_user", configurationObject)
+    return fetch(`${baseUrl}/api/v1/get_current_user`, configurationObject)
       .then(r => r.json())
       .then(user => {
         if (user.error) {
@@ -104,6 +105,6 @@ export const logout = (routeHistory) => {
       method: "DELETE"
     }
 
-    return fetch("https://concert-buddy.herokuapp.com/api/v1/logout", configurationObject)
+    return fetch(`${baseUrl}/api/v1/logout`, configurationObject)
   }
 }

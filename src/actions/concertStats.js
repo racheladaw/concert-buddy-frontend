@@ -1,3 +1,5 @@
+import { baseUrl } from '../config/baseUrl';
+
 export const setUsersOfConcert = data => {
   return {
     type: "SET_USERS",
@@ -16,7 +18,7 @@ export const getUsersOfConcert = (concertId) => {
       }
     }
     console.log("hit getUsersOfConcert")
-    return fetch(`https://concert-buddy.herokuapp.com/api/v1/concert/${concertId}/users`, configurationObject)
+    return fetch(`${baseUrl}/api/v1/concert/${concertId}/users`, configurationObject)
       .then(r => r.json())
       .then(users => {
         if (users.error) {
