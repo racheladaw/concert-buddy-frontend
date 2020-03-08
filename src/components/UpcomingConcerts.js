@@ -10,9 +10,13 @@ class UpcomingConcerts extends React.Component {
   }
 
   renderConcertCard() {
-    return this.props.concerts.map(concert_data => {
-      return <ConcertCard key={concert_data.id} concert={concert_data} />
-    })
+    if (this.props.concerts.length > 0) {
+      return this.props.concerts.map(concert_data => {
+        return <ConcertCard key={concert_data.id} concert={concert_data} />
+      })
+    } else {
+      return <p className="error">Unable to Load Concert Data at This Time</p>
+    }
   }
 
   render() {
