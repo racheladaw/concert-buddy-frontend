@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Logout from './Logout';
 import { NavLink } from 'react-router-dom';
+import profileIcon from '../images/profile_icon.png';
 
 const NavBar = ({ currentUserName }) => {
   return (
@@ -9,6 +10,7 @@ const NavBar = ({ currentUserName }) => {
       <li><NavLink to='/home/upcoming_concerts' activeClassName="active" className="concerts-link">Upcoming Concerts</NavLink><br/></li>
       <li><NavLink to='/home/saved_concerts' activeClassName="active" className="concerts-link">Saved Concerts</NavLink></li>
       <li><Logout /></li>
+      <li id="profileIconList"><img id="profileIcon" src={profileIcon} alt="person icon with headphones"></img></li>
       <li id="welcome-user">Welcome, {currentUserName}</li>
     </ul>
   )
