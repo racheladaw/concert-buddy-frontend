@@ -21,7 +21,7 @@ const ConcertStats = ( props ) => {
   }
 
   return (
-    <div>
+    <div className="ConcertStats">
       {console.log("props.users", props.users)}
       <p>Stats</p>
       <h1>{artist_name}</h1>

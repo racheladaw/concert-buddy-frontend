@@ -1,5 +1,18 @@
-.App {
+html, body {
+  height: 100%;
   width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  min-height: 100%;
+}
+
+.App {
   height: 100%;
   text-align: center;
 }
@@ -177,8 +190,7 @@ li a:hover:not(.active) {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  height: 100%;
-  width: 100%;
+  flex: 1 0 auto;
 }
 
 .ConcertCard {
@@ -217,8 +229,7 @@ li a:hover:not(.active) {
 }
 
 .UpcomingConcerts {
-  height: 100%;
-  width: 100%;
+
 }
 
 .SavedConcerts h1 {
@@ -250,4 +261,8 @@ li a:hover:not(.active) {
   background-color: #ced1d6;
   border-top: solid 1px;
   border-color: #6e7175;
+}
+
+.ConcertStats {
+  height: 100%;
 }
