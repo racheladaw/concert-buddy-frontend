@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser';
 import MainContainer from './components/MainContainer';
 import Welcome from './components/Welcome';
-import Footer from './components/Footer';
 import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -24,7 +23,6 @@ class App extends React.Component {
           }
           <Route path="/" component={Welcome} />
         </Switch>
-        <Footer />
       </div>
     )
   }
