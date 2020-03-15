@@ -246,13 +246,13 @@ li a:hover:not(.active) {
 
 #profileIcon {
   max-width: 100%;
-  height: 40px;
+  height: 30px;
 }
 
 #profileIconList {
   float: right;
   display: block;
-  padding-top: 6px;
+  max-height: 45px;
 }
 
 .footer {
@@ -265,4 +265,8 @@ li a:hover:not(.active) {
 
 .ConcertStats {
   height: 100%;
+}
+
+.profile-link {
+
 }
