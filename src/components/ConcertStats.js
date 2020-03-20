@@ -20,6 +20,14 @@ const ConcertStats = ( props ) => {
     }
   }
 
+  const renderPrice = () => {
+    if (price_range !== "-") {
+      return <h3>${price_range}</h3>
+    } else {
+      return <h3>Price Unknown</h3>
+    }
+  }
+
   return (
     <div className="ConcertStats">
       {console.log("props.users", props.users)}
@@ -27,7 +35,7 @@ const ConcertStats = ( props ) => {
       <h1>{artist_name}</h1>
       <h3>{location_json.city}, {location_json.state}</h3>
       <h3>{date}</h3>
-      <h3>${price_range}</h3>
+      {renderPrice()}
       <p>Users that have saved this concert:</p>
       <ul>
         {renderUsernames()}
