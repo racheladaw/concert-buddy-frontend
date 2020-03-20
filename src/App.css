@@ -267,6 +267,7 @@ li a:hover:not(.active) {
   height: 100%;
 }
 
-.profile-link {
-
+#blankProfilePicture {
+  height: 10%;
+  width: 10%;
 }
