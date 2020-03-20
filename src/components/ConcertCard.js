@@ -12,12 +12,20 @@ class ConcertCard extends React.Component {
     }
   }
 
+  renderPrice = () => {
+    if (this.props.concert.attributes.price_range !== "-") {
+      return <p>${this.props.concert.attributes.price_range}</p>
+    } else {
+      return <p>Price Unknown</p>
+    }
+  }
+
   render() {
     return (
         <div className="ConcertCard">
           <h4>{this.props.concert.attributes.artist_name}</h4>
           <p>{this.props.concert.attributes.date}</p>
-          <p>${this.props.concert.attributes.price_range}</p>
+          {this.renderPrice()}
           <p>{this.props.concert.attributes.location_json.city}, {this.props.concert.attributes.location_json.state}</p>
           <Link
             to={{
