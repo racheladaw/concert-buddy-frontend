@@ -271,3 +271,7 @@ li a:hover:not(.active) {
   height: 10%;
   width: 10%;
 }
+
+.UsernameListConcertStats {
+  list-style-type: none;
+}

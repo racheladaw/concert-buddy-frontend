@@ -31,13 +31,12 @@ const ConcertStats = ( props ) => {
   return (
     <div className="ConcertStats">
       {console.log("props.users", props.users)}
-      <p>Stats</p>
       <h1>{artist_name}</h1>
       <h3>{location_json.city}, {location_json.state}</h3>
       <h3>{date}</h3>
       {renderPrice()}
       <p>Users that have saved this concert:</p>
-      <ul>
+      <ul className="UsernameListConcertStats">
         {renderUsernames()}
       </ul>
     </div>
