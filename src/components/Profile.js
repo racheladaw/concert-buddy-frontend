@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import blankProfilePicture from '../images/Portrait_Placeholder.png';
+import { setFormStateToActive } from '../actions/currentUserProfile.js'
 
 const Profile = ( props ) => {
 
@@ -20,7 +21,15 @@ const Profile = ( props ) => {
       <h5>{props.city}, {props.stateName}</h5>
       <h5>Username: {props.userName}</h5>
 
-      <button>Upload a Profile Picture</button>
+      <button onClick={props.toggleForm} className={props.buttonStatus === "Active" ? "" : "hidden"}>Upload a Profile Photo</button>
+
+      <form className={props.formStatus === "Active" ? "" : "hidden"}>
+        <input
+            className="submit-input"
+            type="submit"
+            value="Upload"
+        />
+      </form>
     </div>
   )
 }
@@ -30,8 +39,16 @@ const mapStateToProps = state => {
     userName: state.currentUser.attributes.username,
     name: state.currentUser.attributes.name,
     city: state.currentUser.attributes.location_json.city,
-    stateName: state.currentUser.attributes.location_json.state
+    stateName: state.currentUser.attributes.location_json.state,
+    buttonStatus: state.currentUserProfile.buttonStatus,
+    formStatus: state.currentUserProfile.formStatus
   }
 }
 
-export default connect(mapStateToProps)(Profile);
+const mapDispatchToProps = dispatch => {
+  return {
+    toggleForm: () => dispatch(setFormStateToActive())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
