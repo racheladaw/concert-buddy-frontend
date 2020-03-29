@@ -22,6 +22,10 @@ body {
   height: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
 .Welcome {
   background-color: #502778;
   align-items: center;
