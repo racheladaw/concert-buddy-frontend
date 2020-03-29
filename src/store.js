@@ -5,6 +5,7 @@ import currentUserReducer from './reducers/currentUser.js';
 import upcomingConcertsReducer from './reducers/upcomingConcerts.js';
 import savedConcertsReducer from './reducers/savedConcerts.js';
 import concertStatsReducer from './reducers/concertStats.js';
+import currentUserProfileReducer from './reducers/currentUserProfile.js';
 
 
 const reducer = combineReducers({
@@ -12,7 +13,8 @@ const reducer = combineReducers({
   currentUser: currentUserReducer,
   upcomingConcerts: upcomingConcertsReducer,
   savedConcerts: savedConcertsReducer,
-  concertStats: concertStatsReducer
+  concertStats: concertStatsReducer,
+  currentUserProfile: currentUserProfileReducer
 })
 // newer version of how middleware is put together
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
