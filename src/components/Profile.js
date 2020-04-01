@@ -20,7 +20,7 @@ const Profile = ( props ) => {
     if (photoInput.files[0]) {
       const formData = new FormData();
       const upload_file = photoInput.files[0]
-      formData.append('file', upload_file);
+      formData.append('profile_picture', upload_file);
       props.submitProfilePhoto(formData, props.userId)
     }
 
@@ -38,7 +38,7 @@ const Profile = ( props ) => {
 
       <form className={props.formStatus === "Active" ? "" : "hidden"} onSubmit={submitPhoto}>
         <input type="file"
-          id="profile-photo-input" name="profile-photo"
+          id="profile-photo-input" name="profile_picture"
           accept="image/png, image/jpeg"
         />
         <input
