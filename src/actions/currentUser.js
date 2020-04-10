@@ -1,5 +1,6 @@
 import { getConcertsFromSongkick } from './upcomingConcerts.js';
 import { baseUrl } from '../config/baseUrl';
+import { setFormStateToInactive } from './currentUserProfile.js';
 
 export const setCurrentUser = user => {
   return {
@@ -11,6 +12,13 @@ export const setCurrentUser = user => {
 export const removeCurrentUser = () => {
   return {
     type: "REMOVE_CURRENT_USER"
+  }
+}
+
+export const setProfilePicture = (picture) => {
+  return {
+    type: "SET_PROFILE_PICTURE",
+    picture
   }
 }
 
@@ -106,5 +114,29 @@ export const logout = (routeHistory) => {
     }
 
     return fetch(`${baseUrl}/api/v1/logout`, configurationObject)
+  }
+}
+
+export const uploadProfilePicture = (formData, userId) => {
+  console.log("hit action creator", userId)
+  return dispatch => {
+    const configurationObject = {
+      credentials: "include",
+      method: "POST",
+      body: formData
+    }
+
+    return fetch(`${baseUrl}/api/v1/users/${userId}/upload_photo`, configurationObject)
+      .then(r => r.json())
+      .then(photo => {
+        if (photo.error) {
+          alert(photo.error)
+        } else {
+          console.log("success", photo)
+          dispatch(setProfilePicture(photo.profile_picture.image_url))
+          dispatch(setFormStateToInactive())
+        }
+      })
+      .catch(error => console.log(error))
   }
 }
