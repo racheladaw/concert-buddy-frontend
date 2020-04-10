@@ -271,7 +271,7 @@ li a:hover:not(.active) {
   height: 100%;
 }
 
-#blankProfilePicture {
+.profilePicture {
   height: 10%;
   width: 10%;
 }
