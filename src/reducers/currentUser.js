@@ -4,6 +4,16 @@ export default (state = null , action) => {
       return action.user
     case "REMOVE_CURRENT_USER":
       return null
+    case "SET_PROFILE_PICTURE":
+      return {
+        ...state,
+        attributes: {
+          ...state.attributes,
+          profile_picture: {
+            image_url: action.picture
+          }
+        }
+      }
     default:
       return state
   }
