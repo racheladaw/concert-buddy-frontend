@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import blankProfilePicture from '../images/Portrait_Placeholder.png';
 import { setFormStateToActive } from '../actions/currentUserProfile.js';
-import { uploadProfilePicture } from '../actions/currentUserProfile.js';
+import { uploadProfilePicture } from '../actions/currentUser.js';
 
 const Profile = ( props ) => {
 
   const renderProfilePicture = () => {
     if (props.profilePicture) {
-      return <img className="profilePicture" alt="Profile picture" src={props.profilePicture.image_url}></img>
+      return <img className="profilePicture" alt="Profile picture" src={props.profilePicture}></img>
     } else {
       return <img className="profilePicture" src={blankProfilePicture} alt="Blank profile avatar"></img>
     }
@@ -60,7 +60,7 @@ const mapStateToProps = state => {
     stateName: state.currentUser.attributes.location_json.state,
     buttonStatus: state.currentUserProfile.buttonStatus,
     formStatus: state.currentUserProfile.formStatus,
-    profilePicture: state.currentUserProfile.profilePicture
+    profilePicture: state.currentUser.attributes.profile_picture.image_url
   }
 }
 
