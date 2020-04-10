@@ -8,9 +8,9 @@ const Profile = ( props ) => {
 
   const renderProfilePicture = () => {
     if (props.profilePicture) {
-      return <img alt="Profile picture"></img>
+      return <img className="profilePicture" alt="Profile picture" src={props.profilePicture.image_url}></img>
     } else {
-      return <img id="blankProfilePicture" src={blankProfilePicture} alt="Blank profile avatar"></img>
+      return <img className="profilePicture" src={blankProfilePicture} alt="Blank profile avatar"></img>
     }
   }
 
@@ -34,7 +34,7 @@ const Profile = ( props ) => {
       <h5>{props.city}, {props.stateName}</h5>
       <h5>Username: {props.userName}</h5>
 
-      <button onClick={props.toggleForm} className={props.buttonStatus === "Active" ? "" : "hidden"}>Upload a Profile Photo</button>
+      <button onClick={props.toggleForm} className={props.buttonStatus === "Active" ? "" : "hidden"}>Change Your Profile Photo</button>
 
       <form className={props.formStatus === "Active" ? "" : "hidden"} onSubmit={submitPhoto}>
         <input type="file"
@@ -59,7 +59,8 @@ const mapStateToProps = state => {
     city: state.currentUser.attributes.location_json.city,
     stateName: state.currentUser.attributes.location_json.state,
     buttonStatus: state.currentUserProfile.buttonStatus,
-    formStatus: state.currentUserProfile.formStatus
+    formStatus: state.currentUserProfile.formStatus,
+    profilePicture: state.currentUserProfile.profilePicture
   }
 }
 
