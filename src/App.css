@@ -279,3 +279,7 @@ li a:hover:not(.active) {
 .UsernameListConcertStats {
   list-style-type: none;
 }
+
+.viewProfileButton {
+  margin-left: 10px;
+}
