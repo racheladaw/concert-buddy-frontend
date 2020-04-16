@@ -132,7 +132,6 @@ export const uploadProfilePicture = (formData, userId) => {
         if (photo.error) {
           alert(photo.error)
         } else {
-          console.log("success", photo)
           dispatch(setProfilePicture(photo.profile_picture.image_url))
           dispatch(setFormStateToInactive())
         }
