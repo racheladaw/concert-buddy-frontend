@@ -17,14 +17,12 @@ export const getUsersOfConcert = (concertId) => {
         "Content-Type": "application/json"
       }
     }
-    console.log("hit getUsersOfConcert")
     return fetch(`${baseUrl}/api/v1/concert/${concertId}/users`, configurationObject)
       .then(r => r.json())
       .then(users => {
         if (users.error) {
           alert(users.error)
         } else {
-          console.log(users.data)
           // routeHistory.push('/home')
           dispatch(setUsersOfConcert(users.data))
         }
