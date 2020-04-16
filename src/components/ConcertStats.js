@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getUsersOfConcert } from '../actions/concertStats.js';
+import { getUsersProfile } from '../actions/users.js';
 
 const ConcertStats = ( props ) => {
   const { artist_name, date, price_range, location_json } = props.location.state.concertData
@@ -8,14 +9,13 @@ const ConcertStats = ( props ) => {
 
 //empty array as second argument will only call useEffect on first render
   useEffect(() => {
-    console.log("useEffect called")
     props.getUsersOfConcert(concertId)
   }, [])
 
   const renderUsernames = () => {
     if (props.users) {
       return props.users.map(user => {
-        return <li>{user.attributes.username}</li>
+        return <li key="user.id">{user.attributes.username} <button onClick={() => props.getUsersProfile(user.id)} className="viewProfileButton">View Profile</button></li>
       })
     }
   }
@@ -30,7 +30,6 @@ const ConcertStats = ( props ) => {
 
   return (
     <div className="ConcertStats">
-      {console.log("props.users", props.users)}
       <h1>{artist_name}</h1>
       <h3>{location_json.city}, {location_json.state}</h3>
       <h3>{date}</h3>
@@ -49,4 +48,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getUsersOfConcert })(ConcertStats);
+export default connect(mapStateToProps, { getUsersOfConcert, getUsersProfile })(ConcertStats);
