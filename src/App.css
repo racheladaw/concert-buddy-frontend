@@ -260,11 +260,16 @@ li a:hover:not(.active) {
 }
 
 .footer {
-  padding: 10px;
-  margin-top: 10px;
+  padding: 3px;
+  margin-top: 20px;
   background-color: #ced1d6;
   border-top: solid 1px;
   border-color: #6e7175;
+  font-size: 0.5em;
+}
+
+.footer a {
+  color: black;
 }
 
 .ConcertStats {
