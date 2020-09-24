@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getUsersOfConcert } from '../actions/concertStats.js';
-import { getUsersProfile } from '../actions/users.js';
 
 const ConcertStats = ( props ) => {
   const { artist_name, date, price_range, location_json } = props.location.state.concertData
@@ -15,7 +14,7 @@ const ConcertStats = ( props ) => {
   const renderUsernames = () => {
     if (props.users) {
       return props.users.map(user => {
-        return <li key="user.id">{user.attributes.username} <button onClick={() => props.getUsersProfile(user.id)} className="viewProfileButton">View Profile</button></li>
+        return <li key={user.id}>{user.attributes.username} <button onClick={() => props.history.push(`/home/user/${user.id}`)} className="viewProfileButton">View Profile</button></li>
       })
     }
   }
@@ -48,4 +47,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getUsersOfConcert, getUsersProfile })(ConcertStats);
+export default connect(mapStateToProps, { getUsersOfConcert })(ConcertStats);
