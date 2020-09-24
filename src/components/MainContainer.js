@@ -5,6 +5,7 @@ import NavBar from './NavBar';
 import ConcertStats from './ConcertStats'
 import Footer from './Footer';
 import Profile from './Profile';
+import UserProfile from './UserProfile';
 import { Route } from 'react-router-dom';
 
 
@@ -18,6 +19,7 @@ const MainContainer = () => {
         <Route exact path='/home/saved_concerts' component={SavedConcerts} />
         <Route exact path='/home/profile' component={Profile} />
         <Route path="/home/concert/:id/stats" component={ConcertStats} />
+        <Route path="/home/user/:id" component={UserProfile} />
         <Footer />
       </div>
     )
