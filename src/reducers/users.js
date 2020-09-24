@@ -1,4 +1,4 @@
-export default (state = {user: null} , action) => {
+export default (state = {user: {name: null, username: null, profilePicture: null, location: null}} , action) => {
   switch (action.type) {
     case "SET_USER":
       return {user: {

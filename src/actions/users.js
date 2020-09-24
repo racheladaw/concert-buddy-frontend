@@ -13,7 +13,6 @@ export const setUserProfileInfo = user => {
 
 // async action creators
 export const getUsersProfile = (userId) => {
-  console.log(userId)
   return dispatch => {
     const configurationObject = {
       // sends cookies back
@@ -29,9 +28,7 @@ export const getUsersProfile = (userId) => {
         if (user.error) {
           alert(user.error)
         } else {
-          // routeHistory.push('/home')
           dispatch(setUserProfileInfo(user.data))
-          console.log(user)
         }
       })
       .catch(error => console.log(error))
