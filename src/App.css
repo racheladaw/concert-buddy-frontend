@@ -12,6 +12,20 @@ body {
   min-height: 100%;
 }
 
+#country-label {
+  color: white;
+  font-weight: 150;
+}
+
+#state-label {
+  color: white;
+  font-weight: 150;
+}
+
+#country-dropdown {
+  margin-left: 15px;
+}
+
 .App {
   height: 100%;
   text-align: center;
