@@ -6,12 +6,10 @@ import { getUsersProfile } from '../actions/users.js';
 const UserProfile = ( props ) => {
 
   useEffect(() => {
-    console.log("props", props)
     props.getUsersProfile(props.match.params.id)
   }, [])
 
   const renderProfilePicture = () => {
-    console.log("profile pic", props.profilePicture)
     if (props.profilePicture) {
       return <img className="profilePicture" alt="Profile picture" src={props.profilePicture}></img>
     } else {
